@@ -1,23 +1,31 @@
 ###Usage: bash Align_HMM.sh
 ###run after scp to remote: scp transcript*.fasta, scp *protein.fasta
 
-#Psuedocode:
-#run as bash Align_HMM.sh transcript*.fasta *protein.fasta (?)
-#then use as command $1 $2 
-
 #Make muscle alignment for 6 transcripts
-#/afs/nd.edu/user17/saraki/local/bin/muscle3.8.31_i86linux64 -in transcript[1-6].fasta -out transcript_aligned[1-6].fasta
+for sequence in Transcript*_Proteins.fasta
+do
+../../local/bin/muscle3.8.31_i86linux64 -in $sequence -out $sequence.aligned
+echo Aligned
+done
 
 #Make HMM protein models for 6 transcripts
-#hmmbuild transcript[1-6].hmm transcript_aligned[1-6].fasta
+for aligned in Transcript*_Proteins.fasta.aligned
+do
+../../local/bin/hmmbuild $aligned.hmm $aligned
+echo HMM built
+done
 
 #Search 4 RNAseq files for each of 6 HMMs
-for file in *protein.fasta
+for RNAseq in *protein.fasta
 do
-echo $file >> matches.txt
-hmmsearch --tblout transcript[1-6].hits transcript[1-6].hmm $file
-grep -v "#" transcript[1-6].hits | wc -l >> matches.txt
-echo matches.txt created
+	for HMM in Transcript*_Proteins.fasta.aligned.hmm
+	do
+	echo $RNAseq >> HMMsearchHits.txt
+	echo $HMM >> HMMsearchHits.txt
+	../../local/bin/hmmsearch --tblout $HMM.txt $HMM $RNAseq
+	grep -v "#" $HMM.txt | wc -l >> HMMsearchHits.txt
+	echo RNAseq files searched for HMMs
+	done
 done
 
 
