@@ -18,5 +18,6 @@ dodge_text = position_dodge(width=0.9)
 finalPlot=a+geom_bar(stat='identity', position="dodge") + geom_text(aes(y=-.5, label='Transcript'),
 position=dodge_text,color='gray', size=7, angle=70, va='top') + geom_text(aes(label='Abundance'),
 position=dodge_text,size=8, va='bottom') + lims(y=(-15, 120))
+finalPlot
 #save plot as jpeg
 ggsave(plot=finalPlot, filename='AbundancePlot.jpeg', dpi=1000)
