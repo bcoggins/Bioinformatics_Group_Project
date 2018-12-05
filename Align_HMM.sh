@@ -15,7 +15,7 @@ do
 echo HMM built
 done
 
-#Search 4 RNAseq files for each of 6 HMMs
+#Search other fasta files for each HMM
 for RNAseq in *protein.fasta
 do
 	for HMM in Transcript*_Proteins.fasta.aligned.hmm
