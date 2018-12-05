@@ -19,10 +19,14 @@ do
 echo HMM built
 done
 
+<<<<<<< HEAD
+#Search other fasta files for each HMM
+=======
 #Search 4 RNAseq files for each of 6 HMMs
 <<<<<<< HEAD
 for RNAseq in *
 =======
+>>>>>>> 9c575494147cb7e7d4b32aabfe84f0c08b9707f9
 for RNAseq in *protein.fasta
 >>>>>>> c1e39d8e9da98b043644c757628cce290a221648
 do
