@@ -11,7 +11,7 @@ from plotnine import *
 #load dataset with no headers, add appropriate column names
 fatmice=pandas.read_csv('hitTableFinal.csv',header=None,sep=',',names=['Mouse','Transcript','Abundance'])
 #give ggplot plotting information + clean up theme + axis labels + chart title + chart size
-a=ggplot(fatmice, aes(x='Mouse', y='Abundance', fill="Transcript")) + theme_classic() + xlab('Transcript') + ylab('Abundance') + ggtitle('Transcript Abundance of Some Proteins in Mice by Dietary Class') + theme(figure_size=(11, 6))
+a=ggplot(fatmice, aes(x='Mouse', y='Abundance', fill="Transcript")) + theme_classic() + xlab('Transcript') + ylab('Abundance') + ggtitle('Transcript Abundance of Some Genes in Mice by Dietary Class') + theme(figure_size=(11, 6))
 #just makes labels within x grouping line up with appropriate bars
 dodge_text = position_dodge(width=0.9)
 #create barplot without any stattistical inference, space out the bars in each group + within-group labels below bars + y axis values above bars + adjust y axis values
