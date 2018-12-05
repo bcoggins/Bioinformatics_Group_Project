@@ -1,0 +1,14 @@
+#                                                                      --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name        accession  query name                  accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#------------------- ----------        -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+Obese2               -          Transcript01_Proteins.fasta -           1.1e-158  520.5   0.5  1.2e-158  520.4   0.5   1.0   1   0   0   1   1   1   1 -
+#
+# Program:         hmmsearch
+# Version:         3.2.1 (June 2018)
+# Pipeline mode:   SEARCH
+# Query file:      Transcript01_Proteins.fasta.aligned.hmm
+# Target file:     Obese2protein.fasta
+# Option settings: ../../local/bin/hmmsearch --tblout Transcript01_Proteins.fasta.aligned.hmm.txt Transcript01_Proteins.fasta.aligned.hmm Obese2protein.fasta 
+# Current dir:     /afs/nd.edu/user17/saraki/biocomputing/FinalProject
+# Date:            Mon Dec  3 10:48:31 2018
+# [ok]

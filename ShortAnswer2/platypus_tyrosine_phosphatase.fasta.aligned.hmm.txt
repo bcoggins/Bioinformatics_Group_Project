@@ -1,0 +1,13 @@
+#                                                                              --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name        accession  query name                          accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#------------------- ----------                -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+#
+# Program:         hmmsearch
+# Version:         3.2.1 (June 2018)
+# Pipeline mode:   SEARCH
+# Query file:      platypus_tyrosine_phosphatase.fasta.aligned.hmm
+# Target file:     Obese2protein.fasta
+# Option settings: ../../local/bin/hmmsearch --tblout platypus_tyrosine_phosphatase.fasta.aligned.hmm.txt platypus_tyrosine_phosphatase.fasta.aligned.hmm Obese2protein.fasta 
+# Current dir:     /afs/nd.edu/user17/saraki/biocomputing/FinalProject
+# Date:            Mon Dec  3 11:20:57 2018
+# [ok]
