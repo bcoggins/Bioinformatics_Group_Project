@@ -4,6 +4,6 @@
 
 for i in Transcript*_HitTable.csv
 do
-cat "$i | head -n 1 >> tophits.csv
+cat $i | head -n 1 >> tophits.csv
 done
 
