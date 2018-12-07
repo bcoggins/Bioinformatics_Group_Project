@@ -1,9 +1,0 @@
-1. Your table that gives a description of each file and filenames was a really good idea.
- It helped us to find different your different files and gave us an idea of what files you had
-
-2. Having to find and view different graphs for each transcript was difficult. 
-We think making one big graph would be easier to find and view
-
-3. We liked that you used a shebang in your scripts! Makes it easier for other people to run 
-
-4. Organizing your repo would also help viewers to find things easier 
