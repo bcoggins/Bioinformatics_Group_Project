@@ -1,8 +1,9 @@
-#download top hit of each transcript ONLY for BLAST search as .csv files
+#download hits of each transcript from BLAST search as .csv files
 #navigate to directory containing csv files
 #use: bash blasttophits.sh
-for i in *Alignment*
+
+for i in Transcript*_HitTable.csv
 do
-cat "$i >> tophits.csv
+cat "$i | head -n 1 >> tophits.csv
 done
 
