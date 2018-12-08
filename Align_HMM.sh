@@ -1,34 +1,29 @@
 ###Usage: bash Align_HMM.sh
-<<<<<<< HEAD
-###run after scp to remote: scp transcript*.fasta, scp *
-=======
-###run after scp to remote: scp transcript*.fasta, scp *protein.fasta
->>>>>>> c1e39d8e9da98b043644c757628cce290a221648
 
-#Make muscle alignment for 6 transcripts
+###Output: Aligned fasta files with name file.aligned, HMM files with file.hmm, HMMsearch files with file.txt and search hit table HMMsearchHits.txt
+
+###Run after secure copy (scp) files from local to remote. Input files should be in same directory as bash script
+
+#!/bin/bash 
+
+#Make muscle alignment for fasta files
 for sequence in Transcript*_Proteins.fasta
 do
 ../../local/bin/muscle3.8.31_i86linux64 -in $sequence -out $sequence.aligned
-echo Aligned
+echo Sequence Aligned
 done
+#Output: Aligned fasta files with added extension .aligned
 
-#Make HMM protein models for 6 transcripts
+#Make HMM protein models for aligned sequences
 for aligned in Transcript*_Proteins.fasta.aligned
 do
 ../../local/bin/hmmbuild $aligned.hmm $aligned
 echo HMM built
 done
+#Output: HMM files with added extension .hmm
 
-<<<<<<< HEAD
 #Search other fasta files for each HMM
-=======
-#Search 4 RNAseq files for each of 6 HMMs
-<<<<<<< HEAD
-for RNAseq in *
-=======
->>>>>>> 9c575494147cb7e7d4b32aabfe84f0c08b9707f9
 for RNAseq in *protein.fasta
->>>>>>> c1e39d8e9da98b043644c757628cce290a221648
 do
 	for HMM in Transcript*_Proteins.fasta.aligned.hmm
 	do
@@ -39,5 +34,5 @@ do
 	echo RNAseq files searched for HMMs
 	done
 done
-
+#Output: Search result files for every HMM file with added extension.txt and table of search hits HMMsearchHits.txt
 
